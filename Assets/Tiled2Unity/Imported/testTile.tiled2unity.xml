@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Tiled2Unity generated xml data-->
+<!--Do not modify by hand-->
+<!--Last exported: 10/9/2017 4:40:15 PM-->
+<Tiled2Unity version="1.0.13.0">
+  <AssignMaterial mesh="testTile_mesh_0001" material="ForestSheet" />
+  <Prefab name="testTile" orientation="Orthogonal" staggerAxis="Y" staggerIndex="Odd" hexSideLength="0" numLayers="1" numTilesWide="150" numTilesHigh="150" tileWidth="16" tileHeight="16" exportScale="0.0625" mapWidthInPixels="2400" mapHeightInPixels="2400" backgroundColor="#808080">
+    <GameObject name="Tile Layer 1" x="0" y="0" z="0">
+      <TileLayer offsetX="0" offsetY="0" />
+      <GameObject name="ForestSheet" x="0" y="0" mesh="testTile_mesh_0001" sortingLayerName="" sortingOrder="0" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>0,-75 15,-75 15,-74 0,-74</Path>
+        </PolygonCollider2D>
+      </GameObject>
+    </GameObject>
+  </Prefab>
+  <ImportMesh filename="testTile_mesh_0001.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ3Rlc3RUaWxlX21lc2hfMDAwMS5vYmonDQoNCiMgVmVydGljZXMgKENvdW50ID0gNjApDQp2IDAgLTc1IDANCnYgLTEgLTc1IDANCnYgLTEgLTc0IDANCnYgMCAtNzQgMA0KdiAtMSAtNzUgMA0KdiAtMiAtNzUgMA0KdiAtMiAtNzQgMA0KdiAtMSAtNzQgMA0KdiAtMiAtNzUgMA0KdiAtMyAtNzUgMA0KdiAtMyAtNzQgMA0KdiAtMiAtNzQgMA0KdiAtMyAtNzUgMA0KdiAtNCAtNzUgMA0KdiAtNCAtNzQgMA0KdiAtMyAtNzQgMA0KdiAtNCAtNzUgMA0KdiAtNSAtNzUgMA0KdiAtNSAtNzQgMA0KdiAtNCAtNzQgMA0KdiAtNSAtNzUgMA0KdiAtNiAtNzUgMA0KdiAtNiAtNzQgMA0KdiAtNSAtNzQgMA0KdiAtNiAtNzUgMA0KdiAtNyAtNzUgMA0KdiAtNyAtNzQgMA0KdiAtNiAtNzQgMA0KdiAtNyAtNzUgMA0KdiAtOCAtNzUgMA0KdiAtOCAtNzQgMA0KdiAtNyAtNzQgMA0KdiAtOCAtNzUgMA0KdiAtOSAtNzUgMA0KdiAtOSAtNzQgMA0KdiAtOCAtNzQgMA0KdiAtOSAtNzUgMA0KdiAtMTAgLTc1IDANCnYgLTEwIC03NCAwDQp2IC05IC03NCAwDQp2IC0xMCAtNzUgMA0KdiAtMTEgLTc1IDANCnYgLTExIC03NCAwDQp2IC0xMCAtNzQgMA0KdiAtMTEgLTc1IDANCnYgLTEyIC03NSAwDQp2IC0xMiAtNzQgMA0KdiAtMTEgLTc0IDANCnYgLTEyIC03NSAwDQp2IC0xMyAtNzUgMA0KdiAtMTMgLTc0IDANCnYgLTEyIC03NCAwDQp2IC0xMyAtNzUgMA0KdiAtMTQgLTc1IDANCnYgLTE0IC03NCAwDQp2IC0xMyAtNzQgMA0KdiAtMTQgLTc1IDANCnYgLTE1IC03NSAwDQp2IC0xNSAtNzQgMA0KdiAtMTQgLTc0IDANCg0KIyBUZXh0dXJlIGNvb3JpZGluYXRlcyAoQ291bnQgPSA0KQ0KdnQgMC40MTE3NjQ3IDAuODc1DQp2dCAwLjQ3MDU4ODIgMC44NzUNCnZ0IDAuNDcwNTg4MiAxDQp2dCAwLjQxMTc2NDcgMQ0KDQojIE5vcm1hbA0Kdm4gMCAwIC0xDQoNCiMgTWVzaCBkZXNjcmlwdGlvbg0KZyB0ZXN0VGlsZV9tZXNoXzAwMDENCg0KIyBGYWNlcw0KZiAxLzEvMSAyLzIvMSAzLzMvMSA0LzQvMQpmIDUvMS8xIDYvMi8xIDcvMy8xIDgvNC8xCmYgOS8xLzEgMTAvMi8xIDExLzMvMSAxMi80LzEKZiAxMy8xLzEgMTQvMi8xIDE1LzMvMSAxNi80LzEKZiAxNy8xLzEgMTgvMi8xIDE5LzMvMSAyMC80LzEKZiAyMS8xLzEgMjIvMi8xIDIzLzMvMSAyNC80LzEKZiAyNS8xLzEgMjYvMi8xIDI3LzMvMSAyOC80LzEKZiAyOS8xLzEgMzAvMi8xIDMxLzMvMSAzMi80LzEKZiAzMy8xLzEgMzQvMi8xIDM1LzMvMSAzNi80LzEKZiAzNy8xLzEgMzgvMi8xIDM5LzMvMSA0MC80LzEKZiA0MS8xLzEgNDIvMi8xIDQzLzMvMSA0NC80LzEKZiA0NS8xLzEgNDYvMi8xIDQ3LzMvMSA0OC80LzEKZiA0OS8xLzEgNTAvMi8xIDUxLzMvMSA1Mi80LzEKZiA1My8xLzEgNTQvMi8xIDU1LzMvMSA1Ni80LzEKZiA1Ny8xLzEgNTgvMi8xIDU5LzMvMSA2MC80LzEKDQo=</ImportMesh>
+  <InternalTexture assetPath="Assets/Sprites&amp;Textures/ForestSheet.png" materialName="ForestSheet" />
+</Tiled2Unity>

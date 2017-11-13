@@ -1,0 +1,4 @@
+multiply speed by time.deltatime
+fixedUpdate - called once every fixed increment of time
+physics in fixed update
+input in update
