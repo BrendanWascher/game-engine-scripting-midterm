@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Hazzard : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            audioSource.Play();
             Coin.coinCount = 0;
             //collision.gameObject.GetComponents<PlayerRespawn>().Respawn() ;
             

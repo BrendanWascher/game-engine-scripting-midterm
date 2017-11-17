@@ -36,41 +36,72 @@ public class PlayerMovement : MonoBehaviour {
 
     private bool isOnGround;
     private bool isOnCeiling;
-	private bool shouldJump = false;
-	private float horizontalInput;
+    private bool shouldJump = false;
+    private float horizontalInput;
 
-	private Vector2 jumpForce; 
+    private Vector2 jumpForce;
+
+    bool facingRight = true;
+    bool isUpsideDown = false;
+
+    Animator anim;
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         Debug.Log("Called from Start.");
         //shouldJump = true;
         audioSource = GetComponent<AudioSource>();
         myRigidBody = GetComponent<Rigidbody2D>();
-		jumpForce = new Vector2 (0, jumpStrength);
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		GetMovementInput ();
-		GetJumpInput ();
-        UpDateIsOnGround();
-        UpDateIsOnCeiling();
+        jumpForce = new Vector2(0, jumpStrength);
+        anim = GetComponent<Animator>();
     }
 
-	private void FixedUpdate()
-	{
+    // Update is called once per frame
+    void Update()
+    {
+        GetMovementInput();
+        GetJumpInput();
+        UpDateIsOnGround();
+        UpDateIsOnCeiling();
+        if (Input.GetButtonDown("Reset"))
+        {
+            transform.position =
+                Checkpoint.currentlyActivatedCheckpoint.transform.position;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        float move = Input.GetAxis("Horizontal");
+
+        anim.SetFloat("Speed", Mathf.Abs(move));
+
         coinCounter.text = "Coins: " + Coin.coinCount;
-		HandleMovement ();
-		HandleJump();
+        HandleMovement(move);
+        HandleJump();
 
         //debugging
         //Debug.Log(isOnGround);
         //Debug.Log(isOnCeiling);
-	}
+    }
+
+    void HorizontalFlip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+    void VerticalFlip()
+    {
+        isUpsideDown = !isUpsideDown;
+        Vector3 theScale = transform.localScale;
+        theScale.y *= -1;
+        transform.localScale = theScale;
+    }
 
 	private void GetMovementInput()
 	{
@@ -89,6 +120,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         Collider2D[] groundObjects = Physics2D.OverlapCircleAll(groundDetectPoint.position, groundDetectRadius, whatCountsAsGround);
         isOnGround = groundObjects.Length > 0;
+        
 
         //debugging
        // if (isOnGround)
@@ -108,24 +140,43 @@ public class PlayerMovement : MonoBehaviour {
 
     private void HandleJump()
     {
+        
+
 		if (shouldJump)
         {
             //myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpStrength);
             Physics2D.gravity = Physics2D.gravity * (-1);
             audioSource.Play();
-			//myRigidBody.AddForce(jumpForce);
+            VerticalFlip();
+            //myRigidBody.AddForce(jumpForce);
             isOnGround = false;
             isOnCeiling = false;
 			shouldJump = false;
         }
     }
 
-    private void HandleMovement()
+    private void HandleMovement(float move)
     {
 
         // Debug.Log("Horizontal Input: " + horizontalInput);
 
         myRigidBody.velocity = new Vector2(horizontalInput * movementSpeed, myRigidBody.velocity.y);
 
+        if (move > 0 && !facingRight)
+            HorizontalFlip();
+        else if (move < 0 && facingRight)
+            HorizontalFlip();
+
     }
+
+    /*
+    public void CheckReset()
+    {
+        if(Input.GetKeyDown("KeyCode.R"))
+        {
+            transform.position =
+                Checkpoint.currentlyActivatedCheckpoint.transform.position;
+        }
+    }
+    */
 }
