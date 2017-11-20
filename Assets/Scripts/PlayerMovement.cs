@@ -75,8 +75,10 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate()
     {
         float move = Input.GetAxis("Horizontal");
+        float verticalMove = Input.GetAxis("Vertical");
 
         anim.SetFloat("Speed", Mathf.Abs(move));
+        anim.SetFloat("vSpeed", Mathf.Abs(verticalMove));
 
         coinCounter.text = "Coins: " + Coin.coinCount;
         HandleMovement(move);
